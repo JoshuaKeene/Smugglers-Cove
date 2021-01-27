@@ -204,6 +204,7 @@ public class Interactive_ChessBoard : InteractiveObject //NxF7 BxA3
             }
         }
 
+        UIManager.TheUI.MainCamera.SetActive(true);
         ChessboardCam.SetActive(true);
         PuzzleUI.SetActive(true);
 
@@ -218,6 +219,7 @@ public class Interactive_ChessBoard : InteractiveObject //NxF7 BxA3
 
         PuzzleUI.SetActive(false);
         ChessboardCam.SetActive(false);
+        UIManager.TheUI.MainCamera.SetActive(false);
 
         foreach (Transform child in Buttons.transform)
         {

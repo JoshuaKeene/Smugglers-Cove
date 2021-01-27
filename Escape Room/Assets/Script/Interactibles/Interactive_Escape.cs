@@ -10,6 +10,7 @@ public class Interactive_Escape : InteractiveObject
     public override void ExecuteInteractiveAction()
     {
         gameObject.tag = "Untagged";
+        UIManager.TheUI.MainCamera.SetActive(true);
         CreditsDirector.SetActive(true);
         StartCoroutine(AudioManager.GlobalSFXManager.FadeOut(AudioManager.GlobalSFXManager.gameObject.GetComponent<AudioSource>(), 3));
     }

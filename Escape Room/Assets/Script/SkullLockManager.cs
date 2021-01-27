@@ -30,6 +30,7 @@ public class SkullLockManager : MonoBehaviour
         //Enable Lock UI
         SkullLockPannel.SetActive(true);
         //Enable Camera
+        UIManager.TheUI.MainCamera.SetActive(true);
         InteractingChest.GetComponent<Interactive_SkullLock>().ChestCam.SetActive(true);
         //Lock Player
         FPSCharacter.GetComponentInChildren<Camera>().enabled = false;
@@ -45,6 +46,7 @@ public class SkullLockManager : MonoBehaviour
         SkullLockPannel.SetActive(false);
         //Disable Camera
         InteractingChest.GetComponent<Interactive_SkullLock>().ChestCam.SetActive(false);
+        UIManager.TheUI.MainCamera.SetActive(false);
         //Unlock Player
         FPSCharacter.GetComponentInChildren<Camera>().enabled = true;
         //Lock Character

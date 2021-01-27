@@ -6,6 +6,7 @@ public class Interactive_Cannon : InteractiveObject
 {
     private bool GunpowderLoaded = false;
     private bool CannonBallLoaded = false;
+    internal bool CannonLit = false;
     private bool Fired = false;
 
     private static bool firstInteraction = true;
@@ -46,6 +47,7 @@ public class Interactive_Cannon : InteractiveObject
             else if (InventoryManager.TheInventory.Items[InventoryManager.TheInventory.CurrentInventoryIndex].Name == "Lit Torch" && CannonBallLoaded == true)
             {
                 print("FIRE!");
+                CannonLit = true;
                 AudioManager.GlobalSFXManager.PlaySFX(AudioManager.GlobalSFXManager.Fuse, null);
                 StartCoroutine("WaitForFuse");
             }

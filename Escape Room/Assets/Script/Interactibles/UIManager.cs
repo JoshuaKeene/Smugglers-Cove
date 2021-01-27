@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject FPSController;
     public Camera FPSCamera;
     public GameObject MainCanvas;
+    public GameObject MainCamera;
     public GameObject OpeningCutscene;
     public GameObject ExitHintText;
     [Header("Associated UI")]

@@ -249,6 +249,7 @@ public class Interactive_Statue : InteractiveObject //Green, Green, Red, White, 
         UIManager.TheUI.InputLockState(false);
         UIManager.TheUI.FPSCamera.enabled = false;
 
+        UIManager.TheUI.MainCamera.SetActive(true);
         StatueCam.SetActive(true);
         StatueUI.SetActive(true);
 
@@ -278,6 +279,7 @@ public class Interactive_Statue : InteractiveObject //Green, Green, Red, White, 
 
         StatueUI.SetActive(false);
         StatueCam.SetActive(false);
+        UIManager.TheUI.MainCamera.SetActive(false);
 
         UIManager.TheUI.FPSCamera.enabled = true;
         UIManager.TheUI.InputLockState(true);

@@ -11,6 +11,8 @@ public class Interactive_FirePit : InteractiveObject
     public Sprite Torch;
     public Sprite LitTorch;
 
+    public GameObject Cannon;
+
     private static bool firstInteraction = true;
 
     public override void ExecuteInteractiveAction()
@@ -41,7 +43,7 @@ public class Interactive_FirePit : InteractiveObject
         yield return new WaitForSeconds(TimeLimit);
         InventoryManager.TheInventory.Items[InventoryManager.TheInventory.GetIndexOfItem("Lit Torch")].Image = Torch;
         InventoryManager.TheInventory.Items[InventoryManager.TheInventory.GetIndexOfItem("Lit Torch")].Name = "Torch";
-        if (firstInteraction) { UIManager.TheUI.TooltipMessage("Torch extinguished!\nYou need to be faster!", 2f); firstInteraction = false; }
+        if (firstInteraction && !Cannon.GetComponent<Interactive_Cannon>().CannonLit) { UIManager.TheUI.TooltipMessage("Torch extinguished!\nYou need to be faster!", 2f); firstInteraction = false; }
         else { UIManager.TheUI.TooltipMessage("Torch extinguished!", 2f); }
         gameObject.GetComponent<MeshCollider>().enabled = true;
     }
